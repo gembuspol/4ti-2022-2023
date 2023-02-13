@@ -15,7 +15,12 @@ function sumaCyfrLiczby(liczba){
     return sumaCyfr;
 }
 function czyPodzielna(liczba){
-    let sumaCyfr=sumaCyfrLiczby(liczba);
+    let sumaCyfr=0;
+    do{
+        sumaCyfr=sumaCyfrLiczby(liczba);
+        liczba=sumaCyfr;
+    }
+    while (sumaCyfr>9);
     let wynik="Liczba NIE JEST podzielna przez 3 - Rekurencja";
     if(sumaCyfr==3 || sumaCyfr==6 || sumaCyfr==9 ){
         wynik="Liczba jest podzielna przez 3 - Rekurencja";
