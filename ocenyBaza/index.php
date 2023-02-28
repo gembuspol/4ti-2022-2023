@@ -21,6 +21,13 @@
                     $przedmiot[]=$wiersz['nazwaPrzedmiot'];
                     $idprzedmiot[]=$wiersz['id'];
                 }
+                $zapytanie="SELECT * from dane";
+                $wynik=mysqli_query($connect,$zapytanie);
+                while($wiersz=mysqli_fetch_array($wynik)){
+                    $imie[]=$wiersz['imie'];
+                    $nazwisko[]=$wiersz['nazwisko'];
+                    $idosoba[]=$wiersz['id'];
+                }
             }else{
                 echo "Brak połączenia z bazą";
             }
@@ -28,6 +35,21 @@
         ?>
         <label for="przedmiot">Wybierz przedmiot</label>
         <select name="przedmiot" id="przedmiot">
+            <?php
+                for($i=0;$i<count($przedmiot);$i++){
+                    echo "<option value=$idprzedmiot[$i]> $przedmiot[$i]</option>";
+                }
+            ?>
+
+        </select>
+        <br>
+        <label for="osoba">Wybierz osobę (ucznia)</label>
+        <select name="osoba" id="osoba">
+            <?php
+                for($i=0;$i<count($imie);$i++){
+                    echo "<option value=$idosoba[$i]> $imie[$i] $nazwisko[$i]</option>";
+                }
+            ?>
 
         </select>
     </main>
