@@ -28,11 +28,23 @@
                     $nazwisko[]=$wiersz['nazwisko'];
                     $idosoba[]=$wiersz['id'];
                 }
+                if($_SERVER["REQUEST_METHOD"]=="POST"){
+                    $przedmiotID=$_POST["przedmiot"];
+                    $osoba=$_POST["osoba"];
+                    $ocena=$_POST["ocena"];
+                    $insert="INSERT INTO oceny VALUES(null,'$osoba','$przedmiotID','$ocena')";
+                    if(mysqli_query($connect,$insert)){
+                        echo "Dodano dane do bazy";
+                    }else{
+                        echo "Bład dodawania do bazy";
+                    }
+                }
             }else{
                 echo "Brak połączenia z bazą";
             }
             mysqli_close($connect);
         ?>
+    <form method="POST">
         <label for="przedmiot">Wybierz przedmiot</label>
         <select name="przedmiot" id="przedmiot">
             <?php
@@ -52,6 +64,12 @@
             ?>
 
         </select>
+        <br>
+        <label for="ocena">Podaj ocenę</label>
+        <input type="number" name="ocena" id="ocena">
+        <br>
+        <input type="submit" value="Zapisz do bazy">
+    </form>
     </main>
     <footer>
         <p>Stronę wykonał Przemek</p>
