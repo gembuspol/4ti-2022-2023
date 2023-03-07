@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lut 2023, 12:24
+-- Czas generowania: 07 Mar 2023, 15:15
 -- Wersja serwera: 10.4.25-MariaDB
 -- Wersja PHP: 8.1.10
 
@@ -47,6 +47,27 @@ INSERT INTO `dane` (`id`, `imie`, `nazwisko`, `wiek`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `oceny`
+--
+
+CREATE TABLE `oceny` (
+  `id` int(11) NOT NULL,
+  `idosoby` int(11) NOT NULL,
+  `idprzedmiotu` int(11) NOT NULL,
+  `ocena` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `oceny`
+--
+
+INSERT INTO `oceny` (`id`, `idosoby`, `idprzedmiotu`, `ocena`) VALUES
+(1, 2, 0, 3),
+(2, 3, 3, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `przedmiot`
 --
 
@@ -77,6 +98,12 @@ ALTER TABLE `dane`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `oceny`
+--
+ALTER TABLE `oceny`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `przedmiot`
 --
 ALTER TABLE `przedmiot`
@@ -91,6 +118,12 @@ ALTER TABLE `przedmiot`
 --
 ALTER TABLE `dane`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT dla tabeli `oceny`
+--
+ALTER TABLE `oceny`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
