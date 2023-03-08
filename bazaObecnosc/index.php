@@ -49,7 +49,7 @@
             ?>
             </tbody>
         </table>
-        <input type="submit" value="Zapisz obecność" width=100px>
+        <input type="submit" value="Zapisz obecność">
         </form>
         
                     
