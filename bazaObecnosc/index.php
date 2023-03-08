@@ -28,11 +28,32 @@
         <h1>Dodawanie obecności</h1>
     </header>
     <main>
-        <?php
+        <form method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Imię i nazwisko</th>
+                    <th>Czy jest obecny?</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
                 for($i=0;$i<count($imie);$i++){
-                    echo "$imie[$i] $nazwisko[$i]";
+                    echo "<tr>";
+                    echo "<th>$idosoba[$i]</th>";
+                    echo "<td>$imie[$i] $nazwisko[$i]</td>";
+                    echo "<td><input type='checkbox' name='obecny$idosoba[$i]' id='obecny$idosoba[$i]'></td>";
+                    echo "</tr>";
                 }
             ?>
+            </tbody>
+        </table>
+        <input type="submit" value="Zapisz obecność" width=100px>
+        </form>
+        
+                    
+                
 
     </main>
     <footer>
