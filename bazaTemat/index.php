@@ -16,9 +16,10 @@
 </head>
 <body>
     <?php
+            $komunikat="";
             $connect=mysqli_connect('localhost','root','','4ti');
             if($connect){
-                echo "Połączyliśmy się z bazą"; 
+                $komunikat=$komunikat."Połączono z bazą <br>";
                 $zapytanie="SELECT * from nauczyciel";
                 $wynik=mysqli_query($connect,$zapytanie);
                 while($wiersz=mysqli_fetch_array($wynik)){
@@ -40,13 +41,13 @@
                     $temat=$_POST["temat"];
                     $insert="INSERT INTO lekcja VALUES(null,$przedmiotID,'$osoba','$data','$lekcja','$temat')";
                     if(mysqli_query($connect,$insert)){
-                        echo "Dodano dane do bazy";
+                        $komunikat=$komunikat."Dodano dane do bazy<br>";
                     }else{
-                        echo "Bład dodawania do bazy";
+                        $komunikat=$komunikat."Bład dodawania do bazy<br>";
                     }
                 }
             }else{
-                echo "Brak połączenia z bazą";
+                $komunikat=$komunikat."Brak połączenia z bazą<br>";
             }
             mysqli_close($connect);
         ?>
@@ -94,6 +95,9 @@
         <br>
         <input type="submit" value="Zapisz dane">
         </form>
+        <?php
+        echo $komunikat;
+        ?>
     </main>
     <footer>
         Stronę wykonał Przemek
