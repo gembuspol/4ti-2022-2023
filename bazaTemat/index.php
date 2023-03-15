@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dodawanie tematów lekcji</title>
     <style>
-        body{
+        body,form{
             padding:15px;
+        }
+        form > *{
+            margin:10px;
         }
     </style>
 </head>
@@ -75,6 +78,7 @@
         <label for="data">Podaj datę</label>
         <input type="date" name="data" id="data">
         <br>
+        <label for="lekcja">Wybierz lekcję</label>
         <select name="lekcja" id="lekcja">
             <?php
             for($i=0;$i<=13;$i++){
