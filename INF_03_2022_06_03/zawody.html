@@ -19,15 +19,29 @@
         <ul>
             <li>Zalew Węgrowski</li>
             <li>Zbiornik Bukówka</li>
-            <li>Jezioro Bartbetowskie</li>
+            <li>Jeziorko Bartbetowskie</li>
             <li>Warta-Obrzycko</li>
         </ul>
+        <h3>Dodaj zawody wędkarskie</h3>
+        <form method="POST" action="zgloszenie.php">
+            <label for="lowisko">Łowisko: </label>
+            <input type="number" name="lowisko" id="lowisko">
+            <br>
+            <label for="data">Data: </label>
+            <input type="date" name="data" id="data">
+            <br>
+            <label for="sedzia">Sędzia: </label>
+            <input type="text" name="sedzia" id="sedzia">
+            <br>
+            <input type="reset" value="CZYŚĆ">
+            <input type="submit" value="DODAJ">
+        </form>
     </main>
     <footer class="stopka1">
-
+        <a href="kwerendy.txt">Pobierz</a>
     </footer>
     <footer class="stopka2">
-
+        <p>Stronę przygotował Przemek</p>
     </footer>
     
 </body>
