@@ -14,6 +14,21 @@
     </section>
     <main>
         <h2>Opinie naszych klinetów</h2>
+        <?php
+        $connect=mysqli_connect('localhost','root','','hurtownia');
+        if($connect){
+            $zapytanie="SELECT zdjecie, imie, opinia FROM klienci INNER JOIN opinie ON klienci.id=opinie.klienci_id WHERE klienci.Typy_id=2 OR klienci.Typy_id=3";
+            $wynik=mysqli_query($connect,$zapytanie);
+            while($wiersz=mysqli_fetch_array($wynik)){
+                echo "<img src='".$wiersz['zdjecie']."' alt='klient'>";
+                echo "<blockquote>".$wiersz['opinia']."</blockquote>";
+                echo "<h4>".$wiersz['imie']."</h4><br>";
+            }
+        }else{
+            echo "Błąd połączenia z bazą";
+        }
+        mysqli_close($connect);
+        ?>
     </main>
     <footer class="stopka1">
         <h3>Współpracuj z nami</h3>
