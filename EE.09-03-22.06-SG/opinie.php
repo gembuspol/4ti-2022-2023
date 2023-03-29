@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styl3.css">
 </head>
 <body>
+    
     <section class="baner">
         <h1>Hurtownia spożywcza</h1>
     </section>
@@ -21,6 +22,13 @@
     <footer class="stopka2">
         <h3>Nasi top klienci</h3>
         <ol>
+        <?php
+            $polaczenie=mysqli_connect('localhost','root','','hurtownia');
+            if($polaczenie){
+                $zapytanie="";
+                $wynik=mysqli_query($polaczenie,$zapytanie);
+            }
+        ?>
             <li></li>
         </ol>
     </footer>
