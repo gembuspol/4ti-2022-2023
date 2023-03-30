@@ -40,11 +40,14 @@
         <?php
             $polaczenie=mysqli_connect('localhost','root','','hurtownia');
             if($polaczenie){
-                $zapytanie="";
+                $zapytanie="SELECT imie, nazwisko, punkty FROM Klienci ORDER BY punkty DESC LIMIT 3";
                 $wynik=mysqli_query($polaczenie,$zapytanie);
+                while($wiersz=mysqli_fetch_array($wynik)){
+                    echo "<li>".$wiersz['imie']." ".$wiersz['nazwisko'].", ".$wiersz['punkty']."pkt. </li>";
+                }
             }
+            mysqli_close($polaczenie);
         ?>
-            <li></li>
         </ol>
     </footer>
     <footer class="stopka3">
