@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabawa JS</title>
+</head>
+<body>
+    <h1>Zmiana koloru tła tabeli</h1>
+    <label for="liczbaR">Podaj wartość R</label>
+    <input type="number" name="liczbaR" id="liczbaR"><br>
+    <label for="liczbaG">Podaj wartość G</label>
+    <input type="number" name="liczbaG" id="liczbaG"><br>
+    <label for="liczbaB">Podaj wartość B</label>
+    <input type="number" name="liczbaB" id="liczbaB"><br>
+    <button onclick="kolor()">Ustaw kolor</button>
+    <table id="tabela">
+        <tr>
+            <td>Liczba porządkowa</td>
+            <td>nazwa</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Rosół</td>
+        </tr>
+        <tr>
+            <td colspan="2">2. Złączenie</td>
+        </tr>
+    </table>
+    <script>
+        function kolor(){
+            let r=document.getElementById("liczbaR").value;
+            let g=document.getElementById("liczbaG").value;
+            let b=document.getElementById("liczbaB").value;
+            const tabela=document.getElementById("tabela");
+            tabela.rows[1].cells[1].style.background='rgb('+r+','+g+','+b+')';
+            tabela.rows[0].cells[1].style.background='rgb('+r+','+g+50+','+b+')';
+            tabela.rows[2].cells[0].style.background='rgb('+r+40+','+g+','+b+')';
+        }
+    </script>
+</body>
+</html>
