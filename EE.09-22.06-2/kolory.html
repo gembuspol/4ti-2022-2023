@@ -26,8 +26,8 @@
         <p>0 do 30 czerwienie, do 60 żółcie, do 150 zielenie, do 250 niebieskie, do 360 fiolet i purpura</p>
         <img src="kolory.jpg" alt="Przestrzeń barw HSL"><br>
         <input type="number" max="360" placeholder="0 - 360" id="hsl">
-        <input type="submit" value="Generuj paletę">
-        <table>
+        <input type="submit" value="Generuj paletę" onclick="generuj()">
+        <table id="tabela">
 			<tr>
 				<td id="1" colspan="4">Kolor główny</td>
 			</tr>
@@ -38,7 +38,17 @@
 				<td id="5">kolor 5</td>
 			</tr>
 		</table>
-        
+        <script>
+            function generuj(){
+                let kolor=document.getElementById("hsl").value;
+                const tabela=document.getElementById("tabela");
+                tabela.rows[0].cells[0].style.background='hsl('+kolor+',100%,50%)';
+                tabela.rows[1].cells[0].style.background='hsl('+kolor+',80%,50%)';
+                tabela.rows[1].cells[1].style.background='hsl('+kolor+',60%,50%)';
+                tabela.rows[1].cells[2].style.background='hsl('+kolor+',40%,50%)';
+                tabela.rows[1].cells[3].style.background='hsl('+kolor+',20%,50%)';
+            }
+        </script>
 </section>
 <footer>
 <p>Autor Kamil Karnafał#6969</p>
