@@ -36,15 +36,39 @@
                 <td>1</td>
             </tr>
         </table>
-        <p>Polub nas <img src="icon-off.png" alt=""></p>
+        <p>Polub nas <img src="icon-off.png" alt="off" id="icon" onclick="margaryna()"></p>
         <a href="https://pixabay.com">Odkryj więcej zdjęć</a>
     </section>
     <footer>
         Autor 1111111
     </footer>
     <script>
-        function olej(){
-            document.getElementById("zdjGlowne").src="pekin.jpg";
+        function olej(zdj){
+            if(zdj == "lanzarotte"){
+                document.getElementById("zdjGlowne").src="lanzarotte.jpg";
+            }
+            if(zdj == "pekin"){
+                document.getElementById("zdjGlowne").src="pekin.jpg";
+            }
+            if(zdj == "serengeti"){
+                document.getElementById("zdjGlowne").src="serengeti.jpg";
+            }
+            if(zdj == "wenecja"){
+                document.getElementById("zdjGlowne").src="wenecja.jpg";
+            }
+            if(zdj == "tajlandia"){
+                document.getElementById("zdjGlowne").src="tajlandia.jpg";
+            }
+        }
+        function margaryna(){
+            let stan=document.getElementById("icon").alt;
+            if(stan=="off"){
+                document.getElementById("icon").src="icon-on.png";
+                document.getElementById("icon").alt="on";
+            }else{
+                document.getElementById("icon").src="icon-off.png";
+                document.getElementById("icon").alt="off";
+            }
         }
     </script>
 </body>
