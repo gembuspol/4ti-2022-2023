@@ -31,18 +31,37 @@
     </section>
     <section class="prawy">
         <button>prev</button>
-        <img src="1.jpg" alt="galeria">
+        <img src="1.jpg" alt="galeria" id="duze">
         <button>next</button>
         <hr>
-        <img src="1.jpg" alt="miniatura" class="miniatura">
-        <img src="2.jpg" alt="miniatura" class="miniatura">
-        <img src="3.jpg" alt="miniatura" class="miniatura">
-        <img src="4.jpg" alt="miniatura" class="miniatura">
-        <img src="5.jpg" alt="miniatura" class="miniatura">
+        <img src="1.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(1)">
+        <img src="2.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(2)">
+        <img src="3.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(3)">
+        <img src="4.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(4)">
+        <img src="5.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(5)">
     </section>
     <footer>
         <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
         <p>Galerię wykonał Przemek</p>
     </footer>
+    <script>
+        function wstawZdjecie(numer){
+            if(numer=="1"){
+                document.getElementById("duze").src="1.jpg";
+            }
+            if(numer=="2"){
+                document.getElementById("duze").src="2.jpg";
+            }
+            if(numer=="3"){
+                document.getElementById("duze").src="3.jpg";
+            }
+            if(numer=="4"){
+                document.getElementById("duze").src="4.jpg";
+            }
+            if(numer=="5"){
+                document.getElementById("duze").src="5.jpg";
+            }
+        }
+    </script>
 </body>
 </html>
