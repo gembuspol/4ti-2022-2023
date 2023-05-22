@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <section class="baner">
+        <h1>Galeria obrazów</h1>
+    </section>
+    <section class="lewy">
+        <img src="zdjecie.jpg" alt="zdjęcie dnia">
+        <h3>Zdjecia opublikowali</h3>
+        <table>
+            <tr>
+                <td>Anna Porada</td>
+                <td>10 zdjęć</td>
+            </tr>
+            <tr>
+                <td>Krzysztof Wasilewski</td>
+                <td>12 zdjęć</td>
+            </tr>
+            <tr>
+                <td>Monika Kowalska</td>
+                <td>4 zdjęć</td>
+            </tr>
+        </table>
+    </section>
+    <section class="prawy">
+        <button>prev</button>
+        <img src="1.jpg" alt="galeria1" class="duzy" id="duzy">
+        <button onclick="dalej()">next</button>
+        <hr>
+        <img src="1.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(1)">
+        <img src="2.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(2)">
+        <img src="3.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(3)">
+        <img src="4.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(4)">
+        <img src="5.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(5)">
+    </section>
+    <footer>
+        <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
+        <p>Galerię wykonał Przemek</p>
+    </footer>
+    <script>
+        function zdjecia(nr){
+            if(nr=="1"){
+                document.getElementById("duzy").src="1.jpg";
+            }
+            if(nr=="2"){
+                document.getElementById("duzy").src="2.jpg";
+            }
+            if(nr=="3"){
+                document.getElementById("duzy").src="3.jpg";
+            }
+            if(nr=="4"){
+                document.getElementById("duzy").src="4.jpg";
+            }
+            if(nr=="5"){
+                document.getElementById("duzy").src="5.jpg";
+            }
+        }
+        function dalej(){
+            dane=document.getElementById("duzy").alt;
+
+            if(dane=="galeria1"){
+                document.getElementById("duzy").src="2.jpg";
+            }
+        }
+    </script>
+</body>
+</html>

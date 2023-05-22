@@ -31,44 +31,18 @@
     </section>
     <section class="prawy">
         <button>prev</button>
-        <img src="1.jpg" alt="galeria1" class="duzy" id="duzy">
-        <button onclick="dalej()">next</button>
+        <img src="1.jpg" alt="galeria">
+        <button>next</button>
         <hr>
-        <img src="1.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(1)">
-        <img src="2.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(2)">
-        <img src="3.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(3)">
-        <img src="4.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(4)">
-        <img src="5.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(5)">
+        <img src="1.jpg" alt="miniatura" class="miniatura">
+        <img src="2.jpg" alt="miniatura" class="miniatura">
+        <img src="3.jpg" alt="miniatura" class="miniatura">
+        <img src="4.jpg" alt="miniatura" class="miniatura">
+        <img src="5.jpg" alt="miniatura" class="miniatura">
     </section>
     <footer>
         <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
         <p>Galerię wykonał Przemek</p>
     </footer>
-    <script>
-        function zdjecia(nr){
-            if(nr=="1"){
-                document.getElementById("duzy").src="1.jpg";
-            }
-            if(nr=="2"){
-                document.getElementById("duzy").src="2.jpg";
-            }
-            if(nr=="3"){
-                document.getElementById("duzy").src="3.jpg";
-            }
-            if(nr=="4"){
-                document.getElementById("duzy").src="4.jpg";
-            }
-            if(nr=="5"){
-                document.getElementById("duzy").src="5.jpg";
-            }
-        }
-        function dalej(){
-            dane=document.getElementById("duzy").alt;
-
-            if(dane=="galeria1"){
-                document.getElementById("duzy").src="2.jpg";
-            }
-        }
-    </script>
 </body>
 </html>
