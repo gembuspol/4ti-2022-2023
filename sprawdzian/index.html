@@ -50,13 +50,13 @@
     <section class="srodek">
         <h2>Zadanie 3 - Obliczanie wartości dla danej osoby</h2>
         <label for="wielkosc">Wielkość</label>
-        <input type="number" name="wielkosc">
-        <select>
-            <option>kobieta</option>
-            <option>mężczyzna</option>
+        <input type="number" name="wielkosc" id="wielkosc">
+        <select id="plec">
+            <option value="kobieta">kobieta</option>
+            <option value="mezczyzna">mężczyzna</option>
         </select>
         <br>
-        <button>Oblicz</button>
+        <button onclick="obliczaj()">Oblicz</button>
         <hr>
         <output>
             Wynik działania
@@ -65,5 +65,20 @@
     <footer>
         Stronę wykonał Przemek
     </footer>
+    <script>
+        function obliczaj(){
+            let wartosc=document.getElementById("wielkosc").value;
+            let plec=document.getElementById("plec").value;
+            let wspolczynnik=0;
+            if(wartosc<3){
+                wspolczynnik=2;
+            }else if(wartosc<8 && wartosc>=3){
+                wspolczynnik=3;
+            }else{
+                wspolczynnik=4;
+            }
+            console.log(wspolczynnik);
+        }
+    </script>
 </body>
 </html>
