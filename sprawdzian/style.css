@@ -1,0 +1,65 @@
+*{
+    background-color: bisque;
+    color:darkblue;
+    text-align: center;
+}
+.banner{
+    width: 100%;
+    background-color:azure;
+    float:left;
+    height: 50px;
+}
+.boki{
+    float: left;
+    width: 100%;
+}
+.lewy{
+    background-color:burlywood;
+    width: 67%;
+    height: 700px;
+    margin: 10px;
+    float: left;
+}
+.miniatura{
+    width: 160px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.duze{
+    width: 500px;
+    margin: 30px;
+    box-shadow: 15px 15px 10px dimgray;
+}
+.lewy>h2{
+    background-color:burlywood;
+}
+
+.prawy{
+    width: 30%;
+    height: 700px;
+    margin: 10px;
+    float: right;
+}
+.srodek{
+    clear: both;
+    color: dodgerblue;
+    padding: 30px;
+}
+.srodek>*{
+    color: dodgerblue;
+}
+table {
+	margin: 40px;
+}
+td {
+	padding: 30px;
+	text-align: center;
+	font-weight: bold; 
+}
+a {
+	color: #aaa;
+	text-decoration: none;
+}
+a:hover {
+	color: white;
+}

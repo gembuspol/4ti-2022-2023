@@ -30,9 +30,9 @@
         </table>
     </section>
     <section class="prawy">
-        <button>prev</button>
+        <button onclick="wstecz()">prev</button>
         <img src="1.jpg" alt="galeria" id="duze">
-        <button>next</button>
+        <button onclick="dalej()">next</button>
         <hr>
         <img src="1.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(1)">
         <img src="2.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(2)">
@@ -45,22 +45,40 @@
         <p>Galerię wykonał Przemek</p>
     </footer>
     <script>
+        let liczba=1;
         function wstawZdjecie(numer){
             if(numer=="1"){
                 document.getElementById("duze").src="1.jpg";
+                liczba=1;
             }
             if(numer=="2"){
                 document.getElementById("duze").src="2.jpg";
+                liczba=2;
             }
             if(numer=="3"){
                 document.getElementById("duze").src="3.jpg";
+                liczba=3;
             }
             if(numer=="4"){
                 document.getElementById("duze").src="4.jpg";
+                liczba=4;
             }
             if(numer=="5"){
                 document.getElementById("duze").src="5.jpg";
+                liczba=5;
             }
+        }
+        function dalej(){
+            if(liczba==5){
+                liczba=1;
+                document.getElementById("duze").src="1.jpg";
+            }else{
+                liczba=liczba+1;
+                document.getElementById("duze").src=liczba+".jpg";
+            }
+        }
+        function wstecz(){
+
         }
     </script>
 </body>
