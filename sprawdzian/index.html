@@ -58,7 +58,7 @@
         <br>
         <button onclick="obliczaj()">Oblicz</button>
         <hr>
-        <output>
+        <output id="wynik">
             Wynik działania
         </output>
     </section>
@@ -70,6 +70,7 @@
             let wartosc=document.getElementById("wielkosc").value;
             let plec=document.getElementById("plec").value;
             let wspolczynnik=0;
+            let mnoznik=0;
             if(wartosc<3){
                 wspolczynnik=2;
             }else if(wartosc<8 && wartosc>=3){
@@ -77,7 +78,14 @@
             }else{
                 wspolczynnik=4;
             }
-            console.log(wspolczynnik);
+            if(plec=="kobieta"){
+                mnoznik=2;
+            }else{
+                mnoznik=3;
+            }
+            let wynik=wartosc*mnoznik + wspolczynnik;
+            console.log(wynik);
+            document.getElementById("wynik").value=wynik;
         }
     </script>
 </body>
